@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/mainlogo_top"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/mainlogo_top"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/mainlogo_bottom"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:text="Blood connects us all"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#282828"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        app:cardElevation="10dp"
+        android:elevation="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome back!"
+        android:textSize="25dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please login to continue"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextInputLayoutStyle"
+        app:boxStrokeColor="@color/white_grey"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        app:hintTextAppearance="@color/white_grey"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter email id"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textColorHint="@color/white_grey"
+            android:drawableStart="@drawable/ic_baseline_email_24"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextInputLayoutStyle"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        app:boxStrokeColor="@color/white_grey"
+        app:hintTextAppearance="@color/white_grey"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Enter password"
+            android:drawablePadding="10dp"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textColorHint="@color/white_grey"
+            android:drawableStart="@drawable/ic_baseline_lock_24"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot password"
+            android:textSize="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white_grey"
+            android:textStyle="bold"
+            android:textAlignment="viewEnd"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log in"
+        android:textAllCaps="false"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        app:backgroundTint="@color/light_grey"
+        app:rippleColor="@color/dark_grey"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp" />
+
+
+    <TextView
+        android:id="@+id/dont_have_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign up"
+        android:textSize="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/white_grey"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

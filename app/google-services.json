@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "152765847030",
+    "project_id": "lifeshare-e6009",
+    "storage_bucket": "lifeshare-e6009.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152765847030:android:71a2625a6187a2561463d7",
+        "android_client_info": {
+          "package_name": "com.bloodbuddy.lifeshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "152765847030-0hqi035dhl924uok3oct0g51mnfcl6v4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bloodbuddy.lifeshare",
+            "certificate_hash": "b4c8b7ecc91604a55db6a3d6870a3a5bbd84b548"
+          }
+        },
+        {
+          "client_id": "152765847030-7j1mf3as02jdcesm8pacvht4r02868uj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEQ_KbOwqE_E8jPvcsXstH7Jeq0CBXSi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "152765847030-7j1mf3as02jdcesm8pacvht4r02868uj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
