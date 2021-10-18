@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/requests"
+        android:icon="@drawable/ic_baseline_post_add_24"
+        android:title="Requests"/>
+
+    <item android:title="Blood Groups">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/a_plus"
+                    android:title="A+"/>
+                <item
+                    android:id="@+id/a_minus"
+                    android:title="A-"/>
+                <item
+                    android:id="@+id/b_plus"
+                    android:title="B+"/>
+                <item
+                    android:id="@+id/b_minus"
+                    android:title="B-"/>
+                <item
+                    android:id="@+id/ab_plus"
+                    android:title="AB+"/>
+                <item
+                    android:id="@+id/ab_minus"
+                    android:title="AB-"/>
+                <item
+                    android:id="@+id/o_plus"
+                    android:title="O+"/>
+                <item
+                    android:id="@+id/o_minus"
+                    android:title="O-"/>
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="User Panel">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/user_profile"
+                    android:title="Profile"
+                    android:icon="@drawable/ic_baseline_person_24"/>
+                <item
+                    android:id="@+id/user_history"
+                    android:icon="@drawable/ic_baseline_history_24"
+                    android:title="My history"/>
+                <item
+                    android:id="@+id/user_notifications"
+                    android:title="Notifications"
+                    android:icon="@drawable/ic_baseline_notifications_active_24"/>
+                <item
+                    android:id="@+id/log_out"
+                    android:title="Log out"
+                    android:icon="@drawable/ic_baseline_exit_to_app_24"/>
+            </group>
+        </menu>
+    </item>
+
+</menu>

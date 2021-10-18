@@ -1,5 +1,6 @@
 package com.bloodbuddy.lifeshare;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,10 +11,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SplashScreen extends AppCompatActivity {
 
     private ImageView mainlogo_top;
-
     Animation top_animation;
 
     @Override
@@ -23,7 +26,6 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         mainlogo_top = findViewById(R.id.mainlogo_top);
-
         top_animation = AnimationUtils.loadAnimation(this , R.anim.top_logo_animation);
         mainlogo_top.setAnimation(top_animation);
 
@@ -35,6 +37,5 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         },3000);
-
     }
 }
