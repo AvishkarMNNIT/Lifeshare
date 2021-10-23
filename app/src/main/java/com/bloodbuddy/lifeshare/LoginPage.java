@@ -40,9 +40,16 @@ public class LoginPage extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = mAuth.getCurrentUser();
                 if(user != null){
-                    Intent intent = new Intent(LoginPage.this , HomePage.class);
-                    startActivity(intent);
-                    finish();
+                    if(user.getEmail().equals("admin@admin.com")){
+                        Intent intent = new Intent(LoginPage.this , AdminLogin.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else {
+                        Intent intent = new Intent(LoginPage.this, HomePage.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
             }
         };
@@ -81,27 +88,53 @@ public class LoginPage extends AppCompatActivity {
                 }
 
                 else{
-                    loading.setMessage("Please wait while we log you in!");
-                    loading.setCanceledOnTouchOutside(false);
-                    loading.show();
 
-                    mAuth.signInWithEmailAndPassword(entered_email , entered_passwrord).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(task.isSuccessful()){
-                                Toast.makeText(LoginPage.this , "Logged in successfuly" , Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(LoginPage.this , HomePage.class);
-                                startActivity(intent);
-                                finish();
+                    if(entered_email.equals("admin@admin.com")){
+                        loading.setMessage("Please wait while we log you in!");
+                        loading.setCanceledOnTouchOutside(false);
+                        loading.show();
+                        mAuth.signInWithEmailAndPassword(entered_email , entered_passwrord).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(LoginPage.this, "Logged in successfully as admin", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(LoginPage.this, AdminLogin.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    String error = task.getException().toString();
+                                    Toast.makeText(LoginPage.this, error.substring(error.indexOf(":") + 1, error.length()), Toast.LENGTH_LONG).show();
+                                }
+                                loading.dismiss();
+
                             }
-                            else {
-                                Toast.makeText(LoginPage.this, task.getException().toString(), Toast.LENGTH_LONG).show();
+                        });
+
+                    }
+
+
+                    else {
+                        loading.setMessage("Please wait while we log you in!");
+                        loading.setCanceledOnTouchOutside(false);
+                        loading.show();
+
+                        mAuth.signInWithEmailAndPassword(entered_email, entered_passwrord).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(LoginPage.this, "Logged in successfully", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(LoginPage.this, HomePage.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    String error = task.getException().toString();
+                                    Toast.makeText(LoginPage.this, error.substring(error.indexOf(":") + 1, error.length()), Toast.LENGTH_LONG).show();
+                                }
+                                loading.dismiss();
                             }
-                            loading.dismiss();
-                        }
-                    });
+                        });
 
-
+                    }
 
                 }
 

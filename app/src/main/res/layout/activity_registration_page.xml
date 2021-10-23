@@ -40,7 +40,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#282828"
+        app:cardBackgroundColor="@color/dark_grey"
         app:cardCornerRadius="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
@@ -129,17 +129,18 @@
                 android:layout_marginTop="5dp"
                 app:hintTextAppearance="@color/white_grey"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter phone number"
+                    android:drawableStart="@drawable/ic_baseline_local_phone_24"
                     android:drawablePadding="10dp"
+                    android:hint="Enter phone number"
+                    android:inputType="number"
                     android:textColor="@color/white"
-                    android:textSize="18dp"
                     android:textColorHint="@color/white_grey"
-                    android:drawableStart="@drawable/ic_baseline_local_phone_24"/>
+                    android:textSize="18dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 

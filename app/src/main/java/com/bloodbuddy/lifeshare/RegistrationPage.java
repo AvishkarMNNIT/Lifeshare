@@ -108,7 +108,8 @@ public class RegistrationPage extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
                                 String error = task.getException().toString();
-                                Toast.makeText(RegistrationPage.this, "Error! " + error, Toast.LENGTH_LONG).show();
+                                Toast.makeText(RegistrationPage.this, error.substring(error.indexOf(":")+1 , error.length()), Toast.LENGTH_LONG).show();
+                                loading.dismiss();
                             }
                             else{
                                 String userId = mAuth.getCurrentUser().getUid();
@@ -125,10 +126,10 @@ public class RegistrationPage extends AppCompatActivity {
                                         if (task.isSuccessful()) {
                                             Toast.makeText(RegistrationPage.this, "Registered Successfully", Toast.LENGTH_LONG).show();
                                         } else {
-                                            Toast.makeText(RegistrationPage.this, task.getException().toString(), Toast.LENGTH_LONG).show();
+                                            String error = task.getException().toString();
+                                            Toast.makeText(RegistrationPage.this, error.substring(error.indexOf(":")+1 , error.length()), Toast.LENGTH_LONG).show();
+                                            loading.dismiss();
                                         }
-                                        finish();
-                                        loading.dismiss();
                                     }
                                 });
                                 Intent intent = new Intent(RegistrationPage.this , HomePage.class);

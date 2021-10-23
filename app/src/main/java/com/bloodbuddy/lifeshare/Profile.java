@@ -44,7 +44,7 @@ public class Profile extends AppCompatActivity {
         profile_phone_number = findViewById(R.id.profile_phone_number);
         back_button = findViewById(R.id.back_button);
 
-        user_ref = FirebaseDatabase.getInstance().getReference().child("users").child(
+        user_ref = FirebaseDatabase.getInstance().getReference("users").child(
                 FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         user_ref.addValueEventListener(new ValueEventListener() {
